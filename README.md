@@ -1,10 +1,6 @@
 Unit 8: Group Milestone - README Example
 ===
 
-:::info
-**Below is an example** of what your **Group Project README** should include and how it should be structured for the **Unit 8 Group Milestone Submission**.
-:::
-
 # Purdue Tracker
 
 ## Table of Contents
@@ -79,8 +75,12 @@ Optional:
 ## Wireframes
 <img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
 
+<!--
 ### [BONUS] Digital Wireframes & Mockups
+This was our original idea that we have now dropped.
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
+-->
 
 ### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
+This was our original idea that we have now dropped.
+<img src="https://raw.githubusercontent.com/moldingtofu/foodcycle/master/demo.gif" width=200>
