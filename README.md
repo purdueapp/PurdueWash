@@ -83,4 +83,5 @@ This was our original idea that we have now dropped.
 
 ### [BONUS] Interactive Prototype
 This was our original idea that we have now dropped.
+
 <img src="https://raw.githubusercontent.com/moldingtofu/foodcycle/master/demo.gif" width=200>
