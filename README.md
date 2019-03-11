@@ -10,67 +10,48 @@ Unit 8: Group Milestone - README Example
 
 ## Overview
 ### Description
-Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
+Tracks what the avaibility of washers, dryers and computer on Purdue's campus
 
 ### App Evaluation
-- **Category:** Social Networking / Music
-- **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
-- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
-- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
+- **Category:** Utility
+- **Mobile:** This app would be solely developed for mobile because alternative web versions are already available.
+- **Story:** Scrapes public websites to provide easy access to info of Purdue's campus
+- **Market:** Any individual enrolled at or living at Purdue could choose to use this app,
+- **Habit:** This app could be used whenever a student wants to check if washers or computers are available
+- **Scope:** First we would start with these services then possibly add more later on
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-* User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
-* Profile pages for each user
-* Settings (Accesibility, Notification, General, etc.)
+* View buildings with washers and amount that are available
+* View status of each machine in a specific building
+* View buildings with computers and amount that are available
+* View status of computers in a specific building
 
 **Optional Nice-to-have Stories**
 
-* Log of past songs/people with album art covers matching
-* Page of most played songs (i.e. songs that most users are connecting through)
-* Profile Add-On: Top music choices, etc.
-* Optional Shuffle Button (i.e. random encounter/random song)
-* Listening/Encounter Queue
+* Images of computer labs in LWSN and HAAS
+* Give notifications when washer is done
 
 ### 2. Screen Archetypes
 
-* Login 
-* Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
-   * ...
-* Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
-* Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
-* Settings Screen
-   * Lets people change language, and app notification settings.
+* Buildings with washers
+* Washer details
+* Buildings with Computers
+* Computer detail
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Music selection
-* Profile
-* Settings
-
-Optional:
-* Music/Encounter Queue
-* Discover (Top Choices)
+* Laundry Tracker
+* Computer Lab Tracker
 
 **Flow Navigation** (Screen to Screen)
-* Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
-* Profile -> Text field to be modified. 
-* Settings -> Toggle settings
+* Dorms with washers -> Specific washer avaibility and times
+* Buildings with computers -> Computer avaibility / Either picture or quantity
 
 ## Wireframes
 <img src="https://raw.githubusercontent.com/purdueapp/purduetrackerios/master/Images/wireframes.jpg" width=800><br>
