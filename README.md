@@ -73,7 +73,7 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+<img src="https://raw.githubusercontent.com/purdueapp/purduetrackerios/master/Images/wireframes.jpg" width=800><br>
 
 <!--
 ### [BONUS] Digital Wireframes & Mockups
