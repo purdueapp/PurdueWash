@@ -22,8 +22,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
         
-        laundryRoomTable.rowHeight = 150
-        // laundryRoomTable.rowHeight = UITableView.automaticDimension
+        //laundryRoomTable.estimatedRowHeight = 150
+        //laundryRoomTable.rowHeight = UITableView.automaticDimension + 16
 
         
     }

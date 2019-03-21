@@ -18,90 +18,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-og-e0w">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="165" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FbM-og-e0w">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaundryRoomCell" rowHeight="184" id="6Lz-FX-bOY" customClass="LaundryRoomTableViewCell" customModule="PurdueWash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="184"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaundryRoomCell" rowHeight="165" id="6Lz-FX-bOY" customClass="LaundryRoomTableViewCell" customModule="PurdueWash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Lz-FX-bOY" id="vwg-bV-Dz0" customClass="LaundryRoomTableViewCell" customModule="PurdueWash" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="183.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Lz-FX-bOY" id="vwg-bV-Dz0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laundry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-nQ-TYf">
-                                                    <rect key="frame" x="15" y="55" width="64" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="sWv-pY-qn4"/>
-                                                        <constraint firstAttribute="height" constant="64" id="zFW-Tz-Tn4"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Washers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pe-nB-QWk">
-                                                    <rect key="frame" x="87" y="55" width="66.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-7Y-Xex">
-                                                    <rect key="frame" x="87" y="84" width="210" height="2"/>
-                                                </progressView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dryers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBu-wE-r7z">
-                                                    <rect key="frame" x="87" y="98" width="51" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UE-ta-J92">
-                                                    <rect key="frame" x="252" y="98" width="45" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-y9-Gyp">
-                                                    <rect key="frame" x="252" y="55" width="45" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wiley Laundry Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-o8-SW3">
-                                                    <rect key="frame" x="23" y="11" width="274" height="28"/>
+                                                    <rect key="frame" x="24" y="16" width="280" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="hUH-sT-fN8">
-                                                    <rect key="frame" x="87" y="127" width="194" height="2"/>
-                                                </progressView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laundry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-nQ-TYf">
+                                                    <rect key="frame" x="16" y="59.5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="LHd-nQ-TYf" secondAttribute="height" multiplier="1:1" id="Yet-HD-BOS"/>
+                                                        <constraint firstAttribute="width" constant="80" id="ixu-u5-YMY"/>
+                                                        <constraint firstAttribute="height" constant="80" id="zNx-FC-JKN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q8J-y0-J3V">
+                                                    <rect key="frame" x="104" y="59.5" width="200" height="30.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-T2-s12">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Washers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAF-V9-p9R">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qWx-0m-aZH"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="15 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPY-46-A1c">
+                                                                    <rect key="frame" x="140" y="0.0" width="60" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="omb-ZH-D0H"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P2m-qX-rUT">
+                                                            <rect key="frame" x="0.0" y="28.5" width="200" height="2"/>
+                                                        </progressView>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VGi-aD-nDv">
+                                                    <rect key="frame" x="104" y="110" width="200" height="30.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="CI4-Iv-2CT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dryers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5f-XS-ScA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="z68-06-4GC"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="19 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-yh-8dy">
+                                                                    <rect key="frame" x="140" y="0.0" width="60" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Wr8-Gp-aqi"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="juj-5J-sc6">
+                                                            <rect key="frame" x="0.0" y="28.5" width="200" height="2"/>
+                                                        </progressView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="tdm-y9-Gyp" firstAttribute="top" secondItem="Hw2-o8-SW3" secondAttribute="bottom" constant="16" id="0zS-L9-P90"/>
-                                                <constraint firstItem="3Pe-nB-QWk" firstAttribute="leading" secondItem="LHd-nQ-TYf" secondAttribute="trailing" constant="8" id="37z-YZ-YyP"/>
-                                                <constraint firstItem="LHd-nQ-TYf" firstAttribute="top" secondItem="Hw2-o8-SW3" secondAttribute="bottom" constant="16" id="6Ek-EL-HJW"/>
-                                                <constraint firstItem="vBu-wE-r7z" firstAttribute="top" secondItem="uYF-7Y-Xex" secondAttribute="bottom" constant="12" id="Aug-7W-3o6"/>
-                                                <constraint firstItem="Hw2-o8-SW3" firstAttribute="top" secondItem="vwg-bV-Dz0" secondAttribute="topMargin" id="Cd9-qU-mGB"/>
-                                                <constraint firstItem="LHd-nQ-TYf" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leadingMargin" id="HEJ-6k-Ltp"/>
-                                                <constraint firstItem="hUH-sT-fN8" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leadingMargin" constant="72" id="ItQ-HF-kyt"/>
-                                                <constraint firstItem="6UE-ta-J92" firstAttribute="top" secondItem="uYF-7Y-Xex" secondAttribute="bottom" constant="12" id="Mh5-W4-OCy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hUH-sT-fN8" secondAttribute="trailing" constant="24" id="W5e-2i-2ZO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Hw2-o8-SW3" secondAttribute="trailing" constant="8" id="XjJ-dQ-qhI"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6UE-ta-J92" secondAttribute="trailing" constant="8" id="bXa-hH-gqA"/>
-                                                <constraint firstItem="uYF-7Y-Xex" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leadingMargin" constant="72" id="c7z-Gx-CDA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tdm-y9-Gyp" secondAttribute="trailing" constant="8" id="cbE-Om-qGJ"/>
-                                                <constraint firstItem="3Pe-nB-QWk" firstAttribute="top" secondItem="Hw2-o8-SW3" secondAttribute="bottom" constant="16" id="cu6-7A-LEk"/>
-                                                <constraint firstItem="uYF-7Y-Xex" firstAttribute="top" secondItem="3Pe-nB-QWk" secondAttribute="bottom" constant="8" id="dzy-xJ-Z7K"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="uYF-7Y-Xex" secondAttribute="trailing" constant="8" id="eAb-AZ-IrH"/>
-                                                <constraint firstItem="vBu-wE-r7z" firstAttribute="leading" secondItem="LHd-nQ-TYf" secondAttribute="trailing" constant="8" id="eta-B1-KeT"/>
-                                                <constraint firstItem="hUH-sT-fN8" firstAttribute="top" secondItem="vBu-wE-r7z" secondAttribute="bottom" constant="8" id="kf3-B5-F6R"/>
-                                                <constraint firstItem="Hw2-o8-SW3" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leadingMargin" constant="8" id="s7d-FJ-V15"/>
+                                                <constraint firstItem="q8J-y0-J3V" firstAttribute="top" secondItem="Hw2-o8-SW3" secondAttribute="bottom" constant="16" id="EJZ-m3-VsW"/>
+                                                <constraint firstItem="Hw2-o8-SW3" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leading" constant="24" id="GVl-zI-WRm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hw2-o8-SW3" secondAttribute="trailing" constant="16" id="Hye-DT-Ooa"/>
+                                                <constraint firstItem="Hw2-o8-SW3" firstAttribute="top" secondItem="vwg-bV-Dz0" secondAttribute="top" constant="16" id="KGX-mI-7rB"/>
+                                                <constraint firstItem="LHd-nQ-TYf" firstAttribute="leading" secondItem="vwg-bV-Dz0" secondAttribute="leading" constant="16" id="V3F-xj-Fvk"/>
+                                                <constraint firstAttribute="trailing" secondItem="VGi-aD-nDv" secondAttribute="trailing" constant="16" id="VlY-gO-i9P"/>
+                                                <constraint firstItem="q8J-y0-J3V" firstAttribute="leading" secondItem="LHd-nQ-TYf" secondAttribute="trailing" constant="8" id="bXw-8W-Ua8"/>
+                                                <constraint firstAttribute="trailing" secondItem="q8J-y0-J3V" secondAttribute="trailing" constant="16" id="cVU-j0-Nl3"/>
+                                                <constraint firstItem="VGi-aD-nDv" firstAttribute="top" secondItem="q8J-y0-J3V" secondAttribute="bottom" constant="20" id="qtE-cf-sPR"/>
+                                                <constraint firstItem="VGi-aD-nDv" firstAttribute="leading" secondItem="LHd-nQ-TYf" secondAttribute="trailing" constant="8" id="r9L-K6-ldL"/>
+                                                <constraint firstItem="LHd-nQ-TYf" firstAttribute="top" secondItem="Hw2-o8-SW3" secondAttribute="bottom" constant="16" id="spN-Z0-cSk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dryerCountLabel" destination="6UE-ta-J92" id="eUx-nC-RBU"/>
-                                            <outlet property="dryerProgressBar" destination="hUH-sT-fN8" id="GXt-Y5-Mrw"/>
                                             <outlet property="laundryRoomImage" destination="LHd-nQ-TYf" id="ADw-U4-vPt"/>
                                             <outlet property="laundryRoomNameLabel" destination="Hw2-o8-SW3" id="2o2-Df-tkp"/>
-                                            <outlet property="washerCountLabel" destination="tdm-y9-Gyp" id="oHQ-rt-6NG"/>
-                                            <outlet property="washerProgressBar" destination="uYF-7Y-Xex" id="mcn-dG-jHS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,14 +131,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Mz-Cp-bbQ"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8gT-bq-pqm"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KcA-aR-9lT"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="N1G-mA-aNp"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WPc-Lf-YeO"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="byk-AO-pDx"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ezH-aO-8HK"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fmn-Zx-25f"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Xt-nc-Yif"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HFr-o5-mmm"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q8s-fQ-wtH"/>
+                            <constraint firstAttribute="trailing" secondItem="FbM-og-e0w" secondAttribute="trailing" id="r8z-20-CkH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
