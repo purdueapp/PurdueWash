@@ -69,18 +69,27 @@ This was our original idea that we have now dropped.
 
 ## Schema 
 ### Models
-#### Post
+#### Laundry Rooms
 
-   | Property      | Type     | Description |
-   | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | Property         | Type     | Description |
+   | ---------------- | -------- | ------------|
+   | name             | String   | unique id for the user post (default field) |
+   | imageUrl         | String   | image of laundryRoomDorm |
+   | availableWashers | Number   | image caption by author |
+   | totalWashers     | Number   | image that user posts |
+   | availableDryers  | Number   | number of likes for the post |
+   | totalDryers      | Number   | number of comments that has been posted to an image |
+   | machines         | Array    | date when post is created (default field) |
+
+#### Machine
+
+   | Property         | Type     | Description |
+   | ---------------- | -------- | ------------|
+   | machineId        | Number   | image of laundryRoomDorm |
+   | type             | String   | unique id for the user post (default field) |
+   | status           | String   | image caption by author |
+   | timeRemaining    | Number   | image that user posts |
+ 
 ### Networking
 #### List of network requests by screen
    - Home Feed Screen
