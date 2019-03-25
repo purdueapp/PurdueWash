@@ -15,6 +15,8 @@
 		2445DC412240564A0025BA9D /* PurdueWashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC402240564A0025BA9D /* PurdueWashUITests.swift */; };
 		2445DC4F224059FE0025BA9D /* LaundryRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */; };
 		2445DC532240768F0025BA9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC522240768F0025BA9D /* HomeViewController.swift */; };
+		24FEC9FD22498A2400487847 /* LaundryRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEC9FC22498A2400487847 /* LaundryRoomViewController.swift */; };
+		24FEC9FF22498A5800487847 /* MachineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FEC9FE22498A5800487847 /* MachineTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2445DC422240564A0025BA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryRoomTableViewCell.swift; sourceTree = "<group>"; };
 		2445DC522240768F0025BA9D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		24FEC9FC22498A2400487847 /* LaundryRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryRoomViewController.swift; sourceTree = "<group>"; };
+		24FEC9FE22498A5800487847 /* MachineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				2445DC2C2240564A0025BA9D /* Info.plist */,
 				2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */,
 				2445DC522240768F0025BA9D /* HomeViewController.swift */,
+				24FEC9FC22498A2400487847 /* LaundryRoomViewController.swift */,
+				24FEC9FE22498A5800487847 /* MachineTableViewCell.swift */,
 			);
 			path = PurdueWash;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2445DC4F224059FE0025BA9D /* LaundryRoomTableViewCell.swift in Sources */,
+				24FEC9FD22498A2400487847 /* LaundryRoomViewController.swift in Sources */,
+				24FEC9FF22498A5800487847 /* MachineTableViewCell.swift in Sources */,
 				2445DC21224056490025BA9D /* AppDelegate.swift in Sources */,
 				2445DC532240768F0025BA9D /* HomeViewController.swift in Sources */,
 			);

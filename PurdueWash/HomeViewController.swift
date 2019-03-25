@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    let laundryData = ["Wiley", "Hawkins", "Hilltop"]
+    let laundryData = ["Wiley", "Hawkins", "Hilltop", "Earhart", "Owen", "Cary"]
     
     @IBOutlet weak var laundryRoomTable: UITableView!
     
@@ -45,6 +45,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return laundryData.count
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        let cell = sender as! LaundryRoomTableViewCell
+        let indexPath = laundryRoomTable.indexPath(for: cell)!
+        let detailsViewController = segue.destination as! LaundryRoomViewController
+        let title = laundryData[indexPath.row].components(separatedBy: " ")[0]
+        
+
+        
+        detailsViewController.navigationTitle.title = title
+        
+        laundryRoomTable.deselectRow(at: indexPath, animated: true)
+        
     }
 
     

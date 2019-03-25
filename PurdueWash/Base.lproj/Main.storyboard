@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Laundry Rooms-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PurdueWash" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,6 +124,7 @@
                                         <connections>
                                             <outlet property="laundryRoomImage" destination="LHd-nQ-TYf" id="ADw-U4-vPt"/>
                                             <outlet property="laundryRoomNameLabel" destination="Hw2-o8-SW3" id="2o2-Df-tkp"/>
+                                            <segue destination="xTb-yi-VXN" kind="show" identifier="laundryRoomMachines" id="PDf-FC-DPR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,14 +132,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Xt-nc-Yif"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HFr-o5-mmm"/>
-                            <constraint firstItem="FbM-og-e0w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q8s-fQ-wtH"/>
-                            <constraint firstAttribute="trailing" secondItem="FbM-og-e0w" secondAttribute="trailing" id="r8z-20-CkH"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6kX-x5-7g8"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pm4-XT-E4s"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gBg-fb-8Pz"/>
+                            <constraint firstItem="FbM-og-e0w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gvh-Ya-U41"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Go-UH-7oe"/>
+                    <navigationItem key="navigationItem" title="Laundry Rooms" id="6Go-UH-7oe">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="cso-ce-SAt"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="laundryRoomTable" destination="FbM-og-e0w" id="4VE-Or-CC2"/>
                     </connections>
@@ -147,13 +150,67 @@
             </objects>
             <point key="canvasLocation" x="1074.375" y="132.04225352112675"/>
         </scene>
+        <!--Laundry Room Name-->
+        <scene sceneID="oYd-sj-7Ag">
+            <objects>
+                <viewController id="xTb-yi-VXN" customClass="LaundryRoomViewController" customModule="PurdueWash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ya4-8a-3DV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8C-B3-DXU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MachineCell" rowHeight="87" id="ZPg-R8-Evk" customClass="MachineTableViewCell" customModule="PurdueWash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZPg-R8-Evk" id="xL4-sX-Wke">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Machine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAt-JE-AF6">
+                                                    <rect key="frame" x="15" y="11" width="115" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="machineNameLabel" destination="sAt-JE-AF6" id="kg6-yj-egV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="leading" secondItem="R6e-Z7-hx4" secondAttribute="leading" id="TVh-eJ-nbt"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="top" secondItem="ya4-8a-3DV" secondAttribute="top" id="XxB-QY-mEH"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="trailing" secondItem="R6e-Z7-hx4" secondAttribute="trailing" id="plg-vK-1AG"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="bottom" secondItem="R6e-Z7-hx4" secondAttribute="bottom" id="yNj-EM-wcX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R6e-Z7-hx4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Laundry Room Name" id="fTM-ao-bsX"/>
+                    <connections>
+                        <outlet property="machineTable" destination="Q8C-B3-DXU" id="cmE-iQ-rWN"/>
+                        <outlet property="navigationTitle" destination="fTM-ao-bsX" id="2n7-LU-tu1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEf-PL-19V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965" y="132.04225352112675"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yq2-k4-Xnb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h75-63-LJB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nue-Kw-R6E">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nue-Kw-R6E">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

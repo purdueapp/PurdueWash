@@ -10,6 +10,8 @@ import UIKit
 
 class MachineTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var machineNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
