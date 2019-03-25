@@ -65,7 +65,7 @@ This was our original idea that we have now dropped.
 ### [BONUS] Interactive Prototype
 This was our original idea that we have now dropped.
 
-<img src="https://raw.githubusercontent.com/moldingtofu/foodcycle/master/demo.gif" width=200>
+<img src="https://raw.githubusercontent.com/moldingtofu/foodcycle/master/demo.gif" width=100>
 
 ## Schema 
 ### Models
@@ -92,50 +92,25 @@ This was our original idea that we have now dropped.
  
 ### Networking
 #### List of network requests by screen
-   - Home Feed Screen
-      - (Read/GET) Query all posts where user is author
-         ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
-         }
-         ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
-      - (Create/POST) Create a new comment on a post
-      - (Delete) Delete existing comment
-   - Create Post Screen
-      - (Create/POST) Create a new post object
-   - Profile Screen
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+  - Home Screen
+    - (Read/GET) Query all posts where user is author
+      ```swift
+      import Alamofire
+
+      Alamofire.request(.GET, "http://data.cs.purdue.edu:8421")
+        .response { req, res, data, error in
+           // TODO: Display washing machines
+           print(res)
+        }
+      ```
+  - Laundry Room Screen
+    - (Create/POST) Request notification to be sent when machine is finished
+
 #### [OPTIONAL:] Existing API Endpoints
 ##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+- Base URL - [http://data.cs.purdue.edu:8421](http://data.cs.purdue.edu:8421)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
-
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
-
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+    `GET`    | /        | get all laundry data
+    `POST`   | /        | request notification alert for machine
