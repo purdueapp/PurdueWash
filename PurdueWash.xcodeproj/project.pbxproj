@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2445DC21224056490025BA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC20224056490025BA9D /* AppDelegate.swift */; };
+		2445DC26224056490025BA9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2445DC24224056490025BA9D /* Main.storyboard */; };
+		2445DC282240564A0025BA9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2445DC272240564A0025BA9D /* Assets.xcassets */; };
+		2445DC2B2240564A0025BA9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2445DC292240564A0025BA9D /* LaunchScreen.storyboard */; };
+		2445DC362240564A0025BA9D /* PurdueWashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC352240564A0025BA9D /* PurdueWashTests.swift */; };
+		2445DC412240564A0025BA9D /* PurdueWashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC402240564A0025BA9D /* PurdueWashUITests.swift */; };
+		2445DC4F224059FE0025BA9D /* LaundryRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */; };
+		2445DC532240768F0025BA9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445DC522240768F0025BA9D /* HomeViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2445DC322240564A0025BA9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2445DC15224056490025BA9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2445DC1C224056490025BA9D;
+			remoteInfo = PurdueWash;
+		};
+		2445DC3D2240564A0025BA9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2445DC15224056490025BA9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2445DC1C224056490025BA9D;
+			remoteInfo = PurdueWash;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2445DC1D224056490025BA9D /* PurdueWash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurdueWash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2445DC20224056490025BA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2445DC25224056490025BA9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2445DC272240564A0025BA9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2445DC2A2240564A0025BA9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2445DC2C2240564A0025BA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2445DC312240564A0025BA9D /* PurdueWashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurdueWashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2445DC352240564A0025BA9D /* PurdueWashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurdueWashTests.swift; sourceTree = "<group>"; };
+		2445DC372240564A0025BA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2445DC3C2240564A0025BA9D /* PurdueWashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurdueWashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2445DC402240564A0025BA9D /* PurdueWashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurdueWashUITests.swift; sourceTree = "<group>"; };
+		2445DC422240564A0025BA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryRoomTableViewCell.swift; sourceTree = "<group>"; };
+		2445DC522240768F0025BA9D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2445DC1A224056490025BA9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC2E2240564A0025BA9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC392240564A0025BA9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2445DC14224056490025BA9D = {
+			isa = PBXGroup;
+			children = (
+				2445DC1F224056490025BA9D /* PurdueWash */,
+				2445DC342240564A0025BA9D /* PurdueWashTests */,
+				2445DC3F2240564A0025BA9D /* PurdueWashUITests */,
+				2445DC1E224056490025BA9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2445DC1E224056490025BA9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2445DC1D224056490025BA9D /* PurdueWash.app */,
+				2445DC312240564A0025BA9D /* PurdueWashTests.xctest */,
+				2445DC3C2240564A0025BA9D /* PurdueWashUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2445DC1F224056490025BA9D /* PurdueWash */ = {
+			isa = PBXGroup;
+			children = (
+				2445DC20224056490025BA9D /* AppDelegate.swift */,
+				2445DC24224056490025BA9D /* Main.storyboard */,
+				2445DC272240564A0025BA9D /* Assets.xcassets */,
+				2445DC292240564A0025BA9D /* LaunchScreen.storyboard */,
+				2445DC2C2240564A0025BA9D /* Info.plist */,
+				2445DC4E224059FE0025BA9D /* LaundryRoomTableViewCell.swift */,
+				2445DC522240768F0025BA9D /* HomeViewController.swift */,
+			);
+			path = PurdueWash;
+			sourceTree = "<group>";
+		};
+		2445DC342240564A0025BA9D /* PurdueWashTests */ = {
+			isa = PBXGroup;
+			children = (
+				2445DC352240564A0025BA9D /* PurdueWashTests.swift */,
+				2445DC372240564A0025BA9D /* Info.plist */,
+			);
+			path = PurdueWashTests;
+			sourceTree = "<group>";
+		};
+		2445DC3F2240564A0025BA9D /* PurdueWashUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2445DC402240564A0025BA9D /* PurdueWashUITests.swift */,
+				2445DC422240564A0025BA9D /* Info.plist */,
+			);
+			path = PurdueWashUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2445DC1C224056490025BA9D /* PurdueWash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2445DC452240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWash" */;
+			buildPhases = (
+				2445DC19224056490025BA9D /* Sources */,
+				2445DC1A224056490025BA9D /* Frameworks */,
+				2445DC1B224056490025BA9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PurdueWash;
+			productName = PurdueWash;
+			productReference = 2445DC1D224056490025BA9D /* PurdueWash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2445DC302240564A0025BA9D /* PurdueWashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2445DC482240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWashTests" */;
+			buildPhases = (
+				2445DC2D2240564A0025BA9D /* Sources */,
+				2445DC2E2240564A0025BA9D /* Frameworks */,
+				2445DC2F2240564A0025BA9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2445DC332240564A0025BA9D /* PBXTargetDependency */,
+			);
+			name = PurdueWashTests;
+			productName = PurdueWashTests;
+			productReference = 2445DC312240564A0025BA9D /* PurdueWashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2445DC3B2240564A0025BA9D /* PurdueWashUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2445DC4B2240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWashUITests" */;
+			buildPhases = (
+				2445DC382240564A0025BA9D /* Sources */,
+				2445DC392240564A0025BA9D /* Frameworks */,
+				2445DC3A2240564A0025BA9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2445DC3E2240564A0025BA9D /* PBXTargetDependency */,
+			);
+			name = PurdueWashUITests;
+			productName = PurdueWashUITests;
+			productReference = 2445DC3C2240564A0025BA9D /* PurdueWashUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2445DC15224056490025BA9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Tobi Ola";
+				TargetAttributes = {
+					2445DC1C224056490025BA9D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					2445DC302240564A0025BA9D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2445DC1C224056490025BA9D;
+					};
+					2445DC3B2240564A0025BA9D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2445DC1C224056490025BA9D;
+					};
+				};
+			};
+			buildConfigurationList = 2445DC18224056490025BA9D /* Build configuration list for PBXProject "PurdueWash" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2445DC14224056490025BA9D;
+			productRefGroup = 2445DC1E224056490025BA9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2445DC1C224056490025BA9D /* PurdueWash */,
+				2445DC302240564A0025BA9D /* PurdueWashTests */,
+				2445DC3B2240564A0025BA9D /* PurdueWashUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2445DC1B224056490025BA9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2445DC2B2240564A0025BA9D /* LaunchScreen.storyboard in Resources */,
+				2445DC282240564A0025BA9D /* Assets.xcassets in Resources */,
+				2445DC26224056490025BA9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC2F2240564A0025BA9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC3A2240564A0025BA9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2445DC19224056490025BA9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2445DC4F224059FE0025BA9D /* LaundryRoomTableViewCell.swift in Sources */,
+				2445DC21224056490025BA9D /* AppDelegate.swift in Sources */,
+				2445DC532240768F0025BA9D /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC2D2240564A0025BA9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2445DC362240564A0025BA9D /* PurdueWashTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2445DC382240564A0025BA9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2445DC412240564A0025BA9D /* PurdueWashUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2445DC332240564A0025BA9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2445DC1C224056490025BA9D /* PurdueWash */;
+			targetProxy = 2445DC322240564A0025BA9D /* PBXContainerItemProxy */;
+		};
+		2445DC3E2240564A0025BA9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2445DC1C224056490025BA9D /* PurdueWash */;
+			targetProxy = 2445DC3D2240564A0025BA9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2445DC24224056490025BA9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2445DC25224056490025BA9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2445DC292240564A0025BA9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2445DC2A2240564A0025BA9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2445DC432240564A0025BA9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2445DC442240564A0025BA9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2445DC462240564A0025BA9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2445DC472240564A0025BA9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2445DC492240564A0025BA9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PurdueWash.app/PurdueWash";
+			};
+			name = Debug;
+		};
+		2445DC4A2240564A0025BA9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PurdueWash.app/PurdueWash";
+			};
+			name = Release;
+		};
+		2445DC4C2240564A0025BA9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWashUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWashUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PurdueWash;
+			};
+			name = Debug;
+		};
+		2445DC4D2240564A0025BA9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FNH343W5A6;
+				INFOPLIST_FILE = PurdueWashUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tobiola.PurdueWashUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PurdueWash;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2445DC18224056490025BA9D /* Build configuration list for PBXProject "PurdueWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2445DC432240564A0025BA9D /* Debug */,
+				2445DC442240564A0025BA9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2445DC452240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2445DC462240564A0025BA9D /* Debug */,
+				2445DC472240564A0025BA9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2445DC482240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2445DC492240564A0025BA9D /* Debug */,
+				2445DC4A2240564A0025BA9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2445DC4B2240564A0025BA9D /* Build configuration list for PBXNativeTarget "PurdueWashUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2445DC4C2240564A0025BA9D /* Debug */,
+				2445DC4D2240564A0025BA9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2445DC15224056490025BA9D /* Project object */;
+}
