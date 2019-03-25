@@ -25,33 +25,26 @@ Tracks what the avaibility of washers, dryers and computer on Purdue's campus
 
 **Required Must-have Stories**
 
-* View buildings with washers and amount that are available
+* View buildings with laundry machines and amount that are available
 * View status of each machine in a specific building
-* View buildings with computers and amount that are available
-* View status of computers in a specific building
 
 **Optional Nice-to-have Stories**
 
-* Images of computer labs in LWSN and HAAS
 * Give notifications when washer is done
 
 ### 2. Screen Archetypes
 
 * Buildings with washers
 * Washer details
-* Buildings with Computers
-* Computer detail
 
 ### 3. Navigation
 
-**Tab Navigation** (Tab to Screen)
+**Single Page Application**
 
 * Laundry Tracker
-* Computer Lab Tracker
 
 **Flow Navigation** (Screen to Screen)
 * Dorms with washers -> Specific washer avaibility and times
-* Buildings with computers -> Computer avaibility / Either picture or quantity
 
 ## Wireframes
 <img src="https://raw.githubusercontent.com/purdueapp/purduetrackerios/master/Images/wireframes.jpg" width=800><br>
@@ -73,22 +66,22 @@ This was our original idea that we have now dropped.
 
    | Property         | Type     | Description |
    | ---------------- | -------- | ------------|
-   | name             | String   | unique id for the user post (default field) |
-   | imageUrl         | String   | image of laundryRoomDorm |
-   | availableWashers | Number   | image caption by author |
-   | totalWashers     | Number   | image that user posts |
-   | availableDryers  | Number   | number of likes for the post |
-   | totalDryers      | Number   | number of comments that has been posted to an image |
-   | machines         | Array    | date when post is created (default field) |
+   | name             | String   | name of laundry room |
+   | imageUrl         | String   | url path of laundry room image |
+   | availableWashers | Number   | number of washers available |
+   | totalWashers     | Number   | total number of washers in laundry room |
+   | availableDryers  | Number   | number of dryers available |
+   | totalDryers      | Number   | total number of dryers in laundy room |
+   | machines         | Array    | holds an array of the machine object in laundry room |
 
 #### Machine
 
    | Property         | Type     | Description |
    | ---------------- | -------- | ------------|
-   | machineId        | Number   | image of laundryRoomDorm |
-   | type             | String   | unique id for the user post (default field) |
-   | status           | String   | image caption by author |
-   | timeRemaining    | Number   | image that user posts |
+   | machineId        | Number   | id of machine id |
+   | type             | String   | string of washer or dryer |
+   | status           | String   | state of the current machine |
+   | timeRemaining    | Number   | time left on dryer if running |
  
 ### Networking
 #### List of network requests by screen
