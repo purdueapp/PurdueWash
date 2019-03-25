@@ -8,7 +8,11 @@
 
 import UIKit
 
+import Alamofire
+import AlamofireImage
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     
     
     let laundryData = ["Wiley", "Hawkins", "Hilltop", "Earhart", "Owen", "Cary"]
@@ -55,8 +59,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let indexPath = laundryRoomTable.indexPath(for: cell)!
         let detailsViewController = segue.destination as! LaundryRoomViewController
         let title = laundryData[indexPath.row].components(separatedBy: " ")[0]
-        
-
         
         detailsViewController.navigationTitle.title = title
         
