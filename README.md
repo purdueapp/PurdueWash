@@ -78,7 +78,7 @@ This was our original idea that we have now dropped.
 
    | Property         | Type     | Description |
    | ---------------- | -------- | ------------|
-   | machineId        | Number   | id of machine id |
+   | name             | String   | id of machine id |
    | type             | String   | string of washer or dryer |
    | status           | String   | state of the current machine |
    | timeRemaining    | Number   | time left on dryer if running |
