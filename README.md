@@ -47,7 +47,7 @@ Tracks what the avaibility of washers, dryers and computer on Purdue's campus
 * Dorms with washers -> Specific washer avaibility and times
 
 ## Wireframes
-<img src="https://raw.githubusercontent.com/purdueapp/purduetrackerios/master/Images/wireframes.jpg" width=800><br>
+<img src="https://raw.githubusercontent.com/purdueapp/purduetrackerios/master/Images/wireframes.jpg" width=300><br>
 
 <!--
 ### [BONUS] Digital Wireframes & Mockups
