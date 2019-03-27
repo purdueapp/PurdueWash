@@ -13,11 +13,11 @@ import AlamofireImage
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
-    let laundryData = ["Wiley", "Hawkins", "Hilltop", "Earhart", "Owen", "Cary"]
+    let laundryData = ["Wiley", "Hawkins", "Hilltop", "Earhart", "Owen", "Cary", "Harrison", "Hillenbrand", "McCutcheon", "Meredith", "Shreve", "Tarkington", "Third Street", "Windsor"]
     
     @IBOutlet weak var laundryRoomTable: UITableView!
+    private let refreshControl = UIRefreshControl()
+
     
     
     override func viewDidLoad() {
@@ -28,8 +28,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //laundryRoomTable.estimatedRowHeight = 150
         //laundryRoomTable.rowHeight = UITableView.automaticDimension + 16
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            laundryRoomTable.refreshControl = refreshControl
+        } else {
+            laundryRoomTable.addSubview(refreshControl)
+        }
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
 
         
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        // Fetch Weather Data
+        fetchWeatherData()
+    }
+    
+    private func fetchWeatherData() {
+        print("yeet")
+        self.refreshControl.endRefreshing()
     }
     
     // MARK: - Table view data source
@@ -42,6 +61,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaundryRoomCell") as! LaundryRoomTableViewCell
         cell.laundryRoomNameLabel.text = laundryData[indexPath.row] + " Laundry Room"
+        
+        let imageName = laundryData[indexPath.row].lowercased().components(separatedBy: " ")[0]
+        
+        cell.laundryRoomImage.image = UIImage(named:imageName)
+        cell.laundryRoomImage.layer.cornerRadius = cell.laundryRoomImage.frame.size.width / 8
+        cell.laundryRoomImage.clipsToBounds = true
         
         return cell
     }
@@ -61,6 +86,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let title = laundryData[indexPath.row].components(separatedBy: " ")[0]
         
         detailsViewController.navigationTitle.title = title
+        
         
         laundryRoomTable.deselectRow(at: indexPath, animated: true)
         

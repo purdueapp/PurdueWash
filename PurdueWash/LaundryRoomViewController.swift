@@ -12,9 +12,11 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     @IBOutlet weak var navigationTitle: UINavigationItem!
-    let machineData = ["Dryer 001", "Dryer 002", "Dryer 003"]
+    let machineData = ["Washer 001", "Washer 002", "Washer 003", "Washer 004", "Washer 005", "Washer 006", "Washer 007", "Washer 008", "Washer 009", "Washer 010", "Washer 011"]
     
     
+    private let refreshControl = UIRefreshControl()
+
     @IBOutlet weak var machineTable: UITableView!
     
     override func viewDidLoad() {
@@ -23,10 +25,30 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         machineTable.dataSource = self
         machineTable.delegate = self
         
-        //laundryRoomTable.estimatedRowHeight = 150
-        //laundryRoomTable.rowHeight = UITableView.automaticDimension + 16
+        machineTable.estimatedRowHeight = 150
+        machineTable.rowHeight = 90
+        
+        if #available(iOS 10.0, *) {
+            machineTable.refreshControl = refreshControl
+        } else {
+            machineTable.addSubview(refreshControl)
+        }
         
         
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+
+        
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        // Fetch Weather Data
+        fetchWeatherData()
+    }
+    
+    private func fetchWeatherData() {
+        print("yeet")
+        self.refreshControl.endRefreshing()
     }
     
     // MARK: - Table view data source
@@ -39,6 +61,7 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MachineCell") as! MachineTableViewCell
         cell.machineNameLabel.text = machineData[indexPath.row]
+        cell.statusLabel.text = "Out of Order"
         
         return cell
     }
