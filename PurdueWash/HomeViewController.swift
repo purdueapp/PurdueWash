@@ -17,8 +17,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var laundryRoomTable: UITableView!
     private let refreshControl = UIRefreshControl()
-
-    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
         
-        //laundryRoomTable.estimatedRowHeight = 150
+        laundryRoomTable.estimatedRowHeight = 150
         //laundryRoomTable.rowHeight = UITableView.automaticDimension + 16
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
@@ -34,11 +33,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             laundryRoomTable.addSubview(refreshControl)
         }
+        navigationItem.searchController = searchController
+
 
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
 
-        
+    
     }
     
     @objc private func refreshWeatherData(_ sender: Any) {

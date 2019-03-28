@@ -12,6 +12,8 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     @IBOutlet weak var navigationTitle: UINavigationItem!
+    let searchController = UISearchController(searchResultsController: nil)
+
     let machineData = ["Washer 001", "Washer 002", "Washer 003", "Washer 004", "Washer 005", "Washer 006", "Washer 007", "Washer 008", "Washer 009", "Washer 010", "Washer 011"]
     
     
@@ -33,6 +35,8 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             machineTable.addSubview(refreshControl)
         }
+        navigationItem.searchController = searchController
+
         
         
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
