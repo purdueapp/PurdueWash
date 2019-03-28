@@ -28,7 +28,7 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         machineTable.delegate = self
         
         machineTable.estimatedRowHeight = 150
-        machineTable.rowHeight = 90
+        machineTable.rowHeight = 80
         
         if #available(iOS 10.0, *) {
             machineTable.refreshControl = refreshControl

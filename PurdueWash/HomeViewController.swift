@@ -25,8 +25,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
         
-        laundryRoomTable.estimatedRowHeight = 150
-        //laundryRoomTable.rowHeight = UITableView.automaticDimension + 16
+        laundryRoomTable.estimatedRowHeight = 148
+        laundryRoomTable.rowHeight = 148
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             laundryRoomTable.refreshControl = refreshControl
