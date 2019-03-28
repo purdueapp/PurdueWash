@@ -67,7 +67,6 @@ This was our original idea that we have now dropped.
    | Property         | Type     | Description |
    | ---------------- | -------- | ------------|
    | name             | String   | name of laundry room |
-   | imageUrl         | String   | url path of laundry room image |
    | availableWashers | Number   | number of washers available |
    | totalWashers     | Number   | total number of washers in laundry room |
    | availableDryers  | Number   | number of dryers available |
