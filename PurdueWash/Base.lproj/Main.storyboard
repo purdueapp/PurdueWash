@@ -81,8 +81,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="CI4-Iv-2CT">
                                                             <rect key="frame" x="0.0" y="0.0" width="176" height="20.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dryers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5f-XS-ScA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dryers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5f-XS-ScA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="77" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="z68-06-4GC"/>
                                                                     </constraints>
@@ -90,8 +90,8 @@
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-yh-8dy">
-                                                                    <rect key="frame" x="139" y="0.0" width="37" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="19 / 32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-yh-8dy">
+                                                                    <rect key="frame" x="116" y="0.0" width="60" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Wr8-Gp-aqi"/>
                                                                     </constraints>
@@ -139,7 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Purdue Wash" largeTitleDisplayMode="always" id="6Go-UH-7oe"/>
+                    <navigationItem key="navigationItem" title="Purdue Wash" id="6Go-UH-7oe"/>
                     <connections>
                         <outlet property="laundryRoomTable" destination="FbM-og-e0w" id="4VE-Or-CC2"/>
                     </connections>
@@ -156,24 +156,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQO-Qp-14S">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Washers" id="Fa5-zh-wsx"/>
-                                    <tabBarItem title="Dryers" id="0DI-up-ogI"/>
-                                </items>
-                            </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8C-B3-DXU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MachineCell" rowHeight="240" id="ZPg-R8-Evk" customClass="MachineTableViewCell" customModule="PurdueWash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="240"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MachineCell" rowHeight="105" id="ZPg-R8-Evk" customClass="MachineTableViewCell" customModule="PurdueWash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZPg-R8-Evk" id="xL4-sX-Wke">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Machine #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAt-JE-AF6">
@@ -215,13 +207,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qQO-Qp-14S" firstAttribute="trailing" secondItem="R6e-Z7-hx4" secondAttribute="trailing" id="Ccr-Vy-m62"/>
-                            <constraint firstItem="qQO-Qp-14S" firstAttribute="leading" secondItem="R6e-Z7-hx4" secondAttribute="leading" id="ECL-jL-mQH"/>
-                            <constraint firstItem="R6e-Z7-hx4" firstAttribute="bottom" secondItem="qQO-Qp-14S" secondAttribute="bottom" id="Guj-ig-Il4"/>
-                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="leading" secondItem="R6e-Z7-hx4" secondAttribute="leading" id="TVh-eJ-nbt"/>
-                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="top" secondItem="ya4-8a-3DV" secondAttribute="top" id="XxB-QY-mEH"/>
-                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="trailing" secondItem="R6e-Z7-hx4" secondAttribute="trailing" id="plg-vK-1AG"/>
-                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="bottom" secondItem="R6e-Z7-hx4" secondAttribute="bottom" id="yNj-EM-wcX"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="trailing" secondItem="R6e-Z7-hx4" secondAttribute="trailing" id="CsD-Dm-VaQ"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="top" secondItem="ya4-8a-3DV" secondAttribute="top" id="LKy-Jj-JEq"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="bottom" secondItem="R6e-Z7-hx4" secondAttribute="bottom" id="deX-1g-TaC"/>
+                            <constraint firstItem="Q8C-B3-DXU" firstAttribute="leading" secondItem="R6e-Z7-hx4" secondAttribute="leading" id="qdw-MH-Jfc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R6e-Z7-hx4"/>
                     </view>
