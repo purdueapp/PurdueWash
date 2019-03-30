@@ -10,11 +10,9 @@ import UIKit
 
 class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
     @IBOutlet weak var navigationTitle: UINavigationItem!
     let searchController = UISearchController(searchResultsController: nil)
-
-    let machineData = ["Washer 01", "Washer 02", "Washer 03", "Washer 04", "Washer 05", "Washer 06", "Washer 07", "Washer 08", "Washer 09", "Washer 10", "Washer 11"]
+    var machines = [Machine]()
     
     
     private let refreshControl = UIRefreshControl()
@@ -38,18 +36,17 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         navigationItem.searchController = searchController
         
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
-        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
 
         
     }
     
-    @objc private func refreshWeatherData(_ sender: Any) {
+    @objc private func refreshLaundryData(_ sender: Any) {
         // Fetch Weather Data
-        fetchWeatherData()
+        fetchLaundryData()
     }
     
-    private func fetchWeatherData() {
-        print("yeet")
+    private func fetchLaundryData() {
         self.refreshControl.endRefreshing()
     }
     
@@ -62,15 +59,17 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MachineCell") as! MachineTableViewCell
-        cell.machineNameLabel.text = machineData[indexPath.row]
-        cell.statusLabel.text = "Out of Order"
+        let machine = machines[indexPath.row]
+
+        cell.machineNameLabel.text = machine.name
+        cell.statusLabel.text = machine.status
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return machineData.count
+        return machines.count
     }
 
     /*

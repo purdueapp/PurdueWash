@@ -122,8 +122,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dryerCountLabel" destination="4Ue-yh-8dy" id="Lzy-Gb-tii"/>
+                                            <outlet property="dryerProgressBar" destination="juj-5J-sc6" id="oud-2Y-4g2"/>
                                             <outlet property="laundryRoomImage" destination="LHd-nQ-TYf" id="ADw-U4-vPt"/>
                                             <outlet property="laundryRoomNameLabel" destination="Hw2-o8-SW3" id="2o2-Df-tkp"/>
+                                            <outlet property="washerCountLabel" destination="wPY-46-A1c" id="u55-Un-ths"/>
+                                            <outlet property="washerProgressBar" destination="P2m-qX-rUT" id="LyM-F0-jGF"/>
                                             <segue destination="xTb-yi-VXN" kind="show" identifier="laundryRoomMachines" id="PDf-FC-DPR"/>
                                         </connections>
                                     </tableViewCell>

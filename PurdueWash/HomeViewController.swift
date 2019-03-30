@@ -11,16 +11,49 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+struct LaundryRoom {
+    let name: String
+    let availableWashers: String
+    let totalWashers: String
+    let availableDryers: String
+    let totalDryers: String
+    var machines: [Machine]
+    
+    init(json: [String: Any]) {
+        name = json["Name"] as? String ?? "Name"
+        availableWashers = json["availableWashers"] as? String ?? "-1"
+        totalWashers = json["availableWashers"] as? String ?? "-1"
+        availableDryers = json["availableWashers"] as? String ?? "-1"
+        totalDryers = json["availableWashers"] as? String ?? "-1"
+        machines = [Machine]()
+        for machine in json["Machines"] as? [[String: Any]] ?? [[:]] {
+            machines.append(Machine(json: machine))
+        }
+    }
+}
+
+struct Machine {
+    let name: String
+    let status: String
+    let timeRemaining: String
+    
+    init(json: [String: Any]) {
+        name = json["Name"] as? String ?? "name"
+        status = json["Status"] as? String ?? "status"
+        timeRemaining = json["TimeRemaining"] as? String ?? "time remaining"
+    }
+}
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let laundryData = ["Wiley", "Hawkins", "Hilltop", "Earhart", "Owen", "Cary", "Harrison", "Hillenbrand", "McCutcheon", "Meredith", "Shreve", "Tarkington", "Third Street", "Windsor"]
-    
+    var laundryRooms = [LaundryRoom]()
     @IBOutlet weak var laundryRoomTable: UITableView!
     private let refreshControl = UIRefreshControl()
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchLaundryData()
         
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
@@ -44,15 +77,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @objc private func refreshWeatherData(_ sender: Any) {
         // Fetch Weather Data
-        fetchWeatherData()
+        fetchLaundryData()
     }
     
-    private func fetchWeatherData() {
-        print("yeet")
-        self.refreshControl.endRefreshing()
+    private func fetchLaundryData() {
+        guard let url = URL(string: "http://data.cs.purdue.edu:8421") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            // check err
+            // check response for 200
+            guard let data = data else { return }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                self.laundryRooms = [LaundryRoom]()
+                for laundryRoom in json as! [[String: Any]] {
+                    self.laundryRooms.append(LaundryRoom(json: laundryRoom))
+                }
+            } catch let jsonErr {
+                print (jsonErr)
+            }
+            self.laundryRoomTable.reloadData()
+            self.refreshControl.endRefreshing()
+        }.resume()
     }
-    
-    // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -61,10 +109,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaundryRoomCell") as! LaundryRoomTableViewCell
-        cell.laundryRoomNameLabel.text = laundryData[indexPath.row] + " Laundry Room"
+        let laundryRoom = self.laundryRooms[indexPath.row]
+        let imageName = laundryRoom.name.lowercased().components(separatedBy: " ")[0]
         
-        let imageName = laundryData[indexPath.row].lowercased().components(separatedBy: " ")[0]
+        cell.laundryRoomNameLabel.text = laundryRoom.name
         
+        cell.washerCountLabel.text = "\(laundryRoom.availableWashers) / \(laundryRoom.totalWashers)"
+        cell.dryerCountLabel.text = "\(laundryRoom.availableDryers) / \(laundryRoom.totalDryers)"
+
         cell.laundryRoomImage.image = UIImage(named:imageName)
         cell.laundryRoomImage.layer.cornerRadius = cell.laundryRoomImage.frame.size.width / 8
         cell.laundryRoomImage.clipsToBounds = true
@@ -74,7 +126,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return laundryData.count
+        return self.laundryRooms.count
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,25 +136,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = sender as! LaundryRoomTableViewCell
         let indexPath = laundryRoomTable.indexPath(for: cell)!
         let detailsViewController = segue.destination as! LaundryRoomViewController
-        let title = laundryData[indexPath.row].components(separatedBy: " ")[0]
+        let laundryRoom = self.laundryRooms[indexPath.row]
+        let words = laundryRoom.name.components(separatedBy: " ")
+        var title = ""
+        
+        let offset = words[words.count - 1] == "Room" ? 2 : 1
+        
+        for word in words[0 ..< words.count - offset] {
+            title += word + " "
+        }
         
         detailsViewController.navigationTitle.title = title
-        
-        
-        laundryRoomTable.deselectRow(at: indexPath, animated: true)
-        
-    }
 
+        detailsViewController.machines = [Machine]()
+        
+        for machine in laundryRoom.machines {
+            detailsViewController.machines.append(machine)
+        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        laundryRoomTable.deselectRow(at: indexPath, animated: true)
     }
-    */
-
 }
