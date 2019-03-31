@@ -26,7 +26,7 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         machineTable.delegate = self
         
         machineTable.estimatedRowHeight = 150
-        machineTable.rowHeight = 80
+        machineTable.rowHeight = 64
         
         if #available(iOS 10.0, *) {
             machineTable.refreshControl = refreshControl
@@ -37,8 +37,6 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
-
-        
     }
     
     @objc private func refreshLaundryData(_ sender: Any) {
@@ -63,6 +61,19 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
 
         cell.machineNameLabel.text = machine.name
         cell.statusLabel.text = machine.status
+        
+        if machine.status == "Out of order" {
+            cell.statusLabel.textColor = UIColor.darkGray
+        } else if machine.status == "In use" {
+            cell.statusLabel.textColor = UIColor(red: 1, green: 0.2, blue: 0.2, alpha: 1)
+            cell.statusLabel.text = "\(machine.timeRemaining)"
+        } else if machine.status == "End of cycle" {
+            cell.statusLabel.textColor = UIColor.orange
+        } else if machine.status == "Available" {
+            cell.statusLabel.textColor = UIColor(red: 0, green: 0.7, blue: 0.1, alpha: 1)
+        } else if machine.status == "Not online" {
+            cell.statusLabel.textColor = UIColor.darkGray
+        }
         
         return cell
     }

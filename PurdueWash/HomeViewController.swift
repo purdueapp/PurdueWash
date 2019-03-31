@@ -21,10 +21,10 @@ struct LaundryRoom {
     
     init(json: [String: Any]) {
         name = json["Name"] as? String ?? "Name"
-        availableWashers = json["availableWashers"] as? String ?? "-1"
-        totalWashers = json["availableWashers"] as? String ?? "-1"
-        availableDryers = json["availableWashers"] as? String ?? "-1"
-        totalDryers = json["availableWashers"] as? String ?? "-1"
+        availableWashers = json["AvailableWashers"] as? String ?? "0"
+        totalWashers = json["TotalWashers"] as? String ?? "0"
+        availableDryers = json["AvailableDryers"] as? String ?? "0"
+        totalDryers = json["TotalDryers"] as? String ?? "0"
         machines = [Machine]()
         for machine in json["Machines"] as? [[String: Any]] ?? [[:]] {
             machines.append(Machine(json: machine))
@@ -53,13 +53,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         fetchLaundryData()
         
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
         
-        laundryRoomTable.estimatedRowHeight = 148
-        laundryRoomTable.rowHeight = 148
+        laundryRoomTable.estimatedRowHeight = 140
+        laundryRoomTable.rowHeight = 140
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             laundryRoomTable.refreshControl = refreshControl
@@ -68,14 +69,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         navigationItem.searchController = searchController
 
-
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
-        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
 
-    
     }
     
-    @objc private func refreshWeatherData(_ sender: Any) {
+    @objc private func refreshLaundryData(_ sender: Any) {
         // Fetch Weather Data
         fetchLaundryData()
     }
@@ -97,8 +96,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             } catch let jsonErr {
                 print (jsonErr)
             }
-            self.laundryRoomTable.reloadData()
-            self.refreshControl.endRefreshing()
+            
+            DispatchQueue.main.async {
+                self.laundryRoomTable.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+            
+            
         }.resume()
     }
     
@@ -116,6 +120,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.washerCountLabel.text = "\(laundryRoom.availableWashers) / \(laundryRoom.totalWashers)"
         cell.dryerCountLabel.text = "\(laundryRoom.availableDryers) / \(laundryRoom.totalDryers)"
+        
+        cell.washerProgressBar.progress = Float(laundryRoom.availableWashers)! / Float(laundryRoom.totalWashers)!
+        cell.dryerProgressBar.progress = Float(laundryRoom.availableDryers)! / Float(laundryRoom.totalDryers)!
 
         cell.laundryRoomImage.image = UIImage(named:imageName)
         cell.laundryRoomImage.layer.cornerRadius = cell.laundryRoomImage.frame.size.width / 8
