@@ -9,14 +9,10 @@
 import UIKit
 
 class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     @IBOutlet weak var navigationTitle: UINavigationItem!
-    let searchController = UISearchController(searchResultsController: nil)
     var machines = [Machine]()
     
-    
     private let refreshControl = UIRefreshControl()
-
     @IBOutlet weak var machineTable: UITableView!
     
     override func viewDidLoad() {
@@ -33,25 +29,47 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             machineTable.addSubview(refreshControl)
         }
-        navigationItem.searchController = searchController
         
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
     }
     
+
     @objc private func refreshLaundryData(_ sender: Any) {
-        // Fetch Weather Data
         fetchLaundryData()
     }
-    
+
     private func fetchLaundryData() {
-        self.refreshControl.endRefreshing()
+        
+        guard let url = URL(string: "http://data.cs.purdue.edu:8421") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            // check err
+            // check response for 200
+            guard let data = data else { return }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                var laundryRooms = [LaundryRoom]()
+                for laundryRoomJSON in json as! [[String: Any]] {
+                    let laundryRoom = LaundryRoom(json: laundryRoomJSON)
+                    laundryRooms.append(laundryRoom)
+                    if laundryRoom.name.contains(self.navigationTitle.title!) {
+                        self.machines = laundryRoom.machines
+                    }
+                }
+            } catch let jsonErr {
+                print (jsonErr)
+            }
+            
+            DispatchQueue.main.async {
+                self.machineTable.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }.resume()
     }
-    
-    // MARK: - Table view data source
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -73,24 +91,14 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
             cell.statusLabel.textColor = UIColor(red: 0, green: 0.7, blue: 0.1, alpha: 1)
         } else if machine.status == "Not online" {
             cell.statusLabel.textColor = UIColor.darkGray
+        } else if machine.status == "Payment in progress" {
+            cell.statusLabel.textColor = UIColor.orange
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return machines.count
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

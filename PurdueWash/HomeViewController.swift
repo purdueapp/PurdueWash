@@ -44,9 +44,10 @@ struct Machine {
     }
 }
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating{
     
     var laundryRooms = [LaundryRoom]()
+    var filteredLaundryRooms = [LaundryRoom]()
     @IBOutlet weak var laundryRoomTable: UITableView!
     private let refreshControl = UIRefreshControl()
     let searchController = UISearchController(searchResultsController: nil)
@@ -59,6 +60,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         laundryRoomTable.dataSource = self
         laundryRoomTable.delegate = self
         
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        
         laundryRoomTable.estimatedRowHeight = 140
         laundryRoomTable.rowHeight = 140
         // Add Refresh Control to Table View
@@ -67,15 +71,39 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             laundryRoomTable.addSubview(refreshControl)
         }
-        navigationItem.searchController = searchController
-
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            laundryRoomTable.tableHeaderView = searchController.searchBar
+        }
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
+        
+    }
+    
 
+    func filterContentForSearch(searchString: String) {
+        self.filteredLaundryRooms = [LaundryRoom]()
+        for laundryRoom in self.laundryRooms {
+            if laundryRoom.name.lowercased().contains(searchString.lowercased()) {
+                self.filteredLaundryRooms.append(laundryRoom)
+            }
+        }
+        if self.filteredLaundryRooms.count == 0 {
+            self.filteredLaundryRooms = self.laundryRooms
+        }
+        self.laundryRoomTable.reloadData()
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        let query = searchController.searchBar.text
+        if query != nil && query != "" {
+            filterContentForSearch(searchString: query!)
+        }
     }
     
     @objc private func refreshLaundryData(_ sender: Any) {
-        // Fetch Weather Data
         fetchLaundryData()
     }
     
@@ -101,19 +129,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.laundryRoomTable.reloadData()
                 self.refreshControl.endRefreshing()
             }
-            
-            
         }.resume()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    func shouldFilter(searchController: UISearchController) -> Bool {
+        let filter = self.searchController.isActive && self.searchController.searchBar.text != nil && self.searchController.searchBar.text != ""
+        return filter
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaundryRoomCell") as! LaundryRoomTableViewCell
-        let laundryRoom = self.laundryRooms[indexPath.row]
+        var laundryRoom: LaundryRoom
+        if shouldFilter(searchController: self.searchController) {
+            laundryRoom = self.filteredLaundryRooms[indexPath.row]
+        } else {
+            laundryRoom = self.laundryRooms[indexPath.row]
+        }
         let imageName = laundryRoom.name.lowercased().components(separatedBy: " ")[0]
         
         cell.laundryRoomNameLabel.text = laundryRoom.name
@@ -132,18 +167,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.laundryRooms.count
+        if shouldFilter(searchController: self.searchController) {
+            return self.filteredLaundryRooms.count
+        } else {
+            return self.laundryRooms.count
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
         let cell = sender as! LaundryRoomTableViewCell
         let indexPath = laundryRoomTable.indexPath(for: cell)!
         let detailsViewController = segue.destination as! LaundryRoomViewController
-        let laundryRoom = self.laundryRooms[indexPath.row]
+        var laundryRoom: LaundryRoom
+        
+        if shouldFilter(searchController: self.searchController) {
+            laundryRoom = self.filteredLaundryRooms[indexPath.row]
+        } else {
+            laundryRoom = self.laundryRooms[indexPath.row]
+        }
+        
         let words = laundryRoom.name.components(separatedBy: " ")
         var title = ""
         
@@ -154,7 +196,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         detailsViewController.navigationTitle.title = title
-
         detailsViewController.machines = [Machine]()
         
         for machine in laundryRoom.machines {
