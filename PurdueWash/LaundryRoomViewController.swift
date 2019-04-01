@@ -30,7 +30,9 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
             machineTable.addSubview(refreshControl)
         }
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
+        refreshControl.tintColor = UIColor.white
+        
+        // refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
     }
     

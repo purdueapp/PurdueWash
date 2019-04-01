@@ -72,12 +72,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             laundryRoomTable.addSubview(refreshControl)
         }
         
+        refreshControl.tintColor = UIColor.white
+        
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
             laundryRoomTable.tableHeaderView = searchController.searchBar
         }
-        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
+        
+        searchController.searchBar.barTintColor = UIColor.white
+        let textField = searchController.searchBar.value(forKey: "searchField") as! UITextField
+        textField.textColor = UIColor.white
+        // refreshControl.attributedTitle = NSAttributedString(string: "Fetching Laundry Data ...")
         refreshControl.addTarget(self, action: #selector(refreshLaundryData(_:)), for: .valueChanged)
         
     }

@@ -3,6 +3,11 @@ Unit 8: Group Milestone - README Example
 
 # Purdue Tracker
 
+<img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/app_icon.jpg" width=100>
+
+<img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/purduewash1.gif" width=200>
+
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
