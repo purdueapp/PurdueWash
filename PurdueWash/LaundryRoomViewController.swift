@@ -79,10 +79,17 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "MachineCell") as! MachineTableViewCell
         let machine = machines[indexPath.row]
         
-        let machineType = machine.name.components(separatedBy: " ")[0]
-        let machineNumber = machine.name.components(separatedBy: " ")[1].dropFirst()
+        var machineLabel = ""
+        for word in machine.name.components(separatedBy: " ") {
+            if Int(word) != nil {
+                machineLabel += word.dropFirst() + " "
+            } else {
+                machineLabel += word + " "
+            }
+        }
+        machineLabel = String(machineLabel.dropLast())
 
-        cell.machineNameLabel.text = "\(machineType) \(machineNumber)"
+        cell.machineNameLabel.text = machineLabel
         cell.statusLabel.text = machine.status
         
         if machine.status == "Out of order" {
