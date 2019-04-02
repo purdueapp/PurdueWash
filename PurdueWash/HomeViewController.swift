@@ -8,9 +8,6 @@
 
 import UIKit
 
-import Alamofire
-import AlamofireImage
-
 struct LaundryRoom {
     let name: String
     let availableWashers: String
