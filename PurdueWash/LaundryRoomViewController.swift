@@ -57,7 +57,17 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
                     let laundryRoom = LaundryRoom(json: laundryRoomJSON)
                     laundryRooms.append(laundryRoom)
                     if laundryRoom.name.contains(self.navigationTitle.title!) {
-                        self.machines = laundryRoom.machines
+                        self.machines = [Machine]()
+                        for machine in laundryRoom.machines {
+                            if machine.name.contains("Washer") {
+                                self.machines.append(machine)
+                            }
+                        }
+                        for machine in laundryRoom.machines {
+                            if machine.name.contains("Dryer") {
+                                self.machines.append(machine)
+                            }
+                        }
                     }
                 }
             } catch let jsonErr {

@@ -202,7 +202,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         detailsViewController.machines = [Machine]()
         
         for machine in laundryRoom.machines {
-            detailsViewController.machines.append(machine)
+            if machine.name.contains("Washer") {
+                detailsViewController.machines.append(machine)
+            }
+        }
+        for machine in laundryRoom.machines {
+            if machine.name.contains("Dryer") {
+                detailsViewController.machines.append(machine)
+            }
         }
     
         laundryRoomTable.deselectRow(at: indexPath, animated: true)
