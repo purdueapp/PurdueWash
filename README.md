@@ -5,7 +5,7 @@ Unit 8: Group Milestone - README Example
 
 <img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/app_icon.jpg" width=100>
 
-<img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/purduewash1.gif" width=200>
+<img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/purduewash2.gif" width=200>
 
 
 ## Table of Contents
