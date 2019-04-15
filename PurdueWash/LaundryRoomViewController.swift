@@ -14,6 +14,7 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
     
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var machineTable: UITableView!
+    private let segmentControl = UISegmentedControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,15 @@ class LaundryRoomViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             machineTable.addSubview(refreshControl)
         }
+        
+        
+        /*
+         if #available(iOS 11.0, *) {
+         navigationItem.searchController = searchController
+         } else {
+         laundryRoomTable.tableHeaderView = searchController.searchBar
+         }
+         */
         
         refreshControl.tintColor = UIColor.white
         

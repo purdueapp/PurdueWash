@@ -71,11 +71,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         refreshControl.tintColor = UIColor.white
         
+        /*
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
             laundryRoomTable.tableHeaderView = searchController.searchBar
         }
+        */
         
         searchController.searchBar.barTintColor = UIColor.white
         let textField = searchController.searchBar.value(forKey: "searchField") as! UITextField
