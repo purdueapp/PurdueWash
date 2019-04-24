@@ -3,6 +3,8 @@ Unit 8: Group Milestone - README Example
 
 # Purdue Tracker
 
+<img src="https://github.com/purdueapp/PurdueWash/blob/master/demo.MP4" width=100>
+
 <img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/app_icon.jpg" width=100>
 
 <img src="https://raw.githubusercontent.com/purdueapp/PurdueWash/master/Images/purduewash2.gif" width=200>
